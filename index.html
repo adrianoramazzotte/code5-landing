@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code5 Solutions — Software sob medida, do tamanho da sua necessidade</title>
+<meta name="description" content="A Code5 Solutions desenvolve software sob medida: sistemas web, aplicativos, integrações e automações. Do MVP ao produto no ar, com time próprio e entrega por sprint.">
+<meta name="theme-color" content="#070B09">
+<meta property="og:title" content="Code5 Solutions — Software sob medida">
+<meta property="og:description" content="Sistemas, apps e automações construídos do tamanho exato da necessidade do seu negócio.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23070B09'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='Arial' font-weight='bold' fill='%232FE6A0'>5</text></svg>">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Code5 Solutions — início">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><path d="M16 2 30 10v12L16 30 2 22V10Z" fill="none" stroke="url(#g)" stroke-width="2"/><path d="M16 9.5 23 13.5v7L16 24.5 9 20.5v-7Z" fill="url(#g)" fill-opacity=".22" stroke="url(#g)" stroke-width="1.2"/><defs><linearGradient id="g" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#2FE6A0"/><stop offset="1" stop-color="#7CF9C8"/></linearGradient></defs></svg>
+      </span>
+      <span class="brand__text">code<span class="brand__five">5</span><em>solutions</em></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#dispositivos">Multiplataforma</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#modelos">Como contratar</a>
+      <a href="#processo">Processo</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+
+    <div class="nav__cta">
+      <a class="btn btn--ghost nav__phone" href="#contato">Falar com um especialista</a>
+      <a class="btn btn--mint" href="#contato">Pedir orçamento <span class="arrow">→</span></a>
+      <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<main id="top">
+<section class="hero">
+  <canvas class="hero__canvas" id="shards" aria-hidden="true"></canvas>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <div class="wrap hero__content">
+    <span class="chip reveal" data-d="0">
+      <span class="chip__dot"></span> Fábrica de software sob medida · projetos no ar desde o primeiro sprint
+    </span>
+
+    <h1 class="hero__title">
+      <span class="line"><span class="word">Software</span> <span class="word">do</span> <span class="word">tamanho</span> <span class="word">exato</span></span>
+      <span class="line"><span class="word">da</span> <span class="word grad">sua necessidade</span></span>
+    </h1>
+
+    <p class="hero__sub reveal" data-d="1">
+      A Code5 Solutions constrói sistemas, aplicativos e automações sob medida — sem pacote engessado,
+      sem licença por usuário, sem funcionalidade que você paga e nunca usa. Você recebe o produto no ar,
+      o código na sua mão e um time que continua junto depois da entrega.
+    </p>
+
+    <div class="hero__actions reveal" data-d="2">
+      <a class="btn btn--mint btn--lg" href="#contato">Quero um orçamento <span class="arrow">→</span></a>
+      <button class="codechip" id="copyChip" title="Copiar">
+        <span class="codechip__prompt">$</span>
+        <span class="codechip__text" id="copyText">contato@code5solutions.com.br</span>
+        <span class="codechip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </span>
+      </button>
+    </div>
+
+    <p class="hero__note reveal" data-d="3">Resposta em até 24h úteis · escopo e proposta em até 5 dias · sem custo para orçar</p>
+
+    <ul class="stats reveal" data-d="4">
+      <li><strong data-count="6">0</strong><span>produtos autorais no ar</span></li>
+      <li><strong data-count="5">0</strong><span>setores atendidos</span></li>
+      <li><strong data-count="100" data-suffix="%">0</strong><span>código entregue ao cliente</span></li>
+      <li><strong data-count="24" data-suffix="h">0</strong><span>para o primeiro retorno</span></li>
+    </ul>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>MeuMercadoOn</span><i>◆</i><span>Meu Salão</span><i>◆</i><span>AppFightClub</span><i>◆</i><span>ChessClub</span><i>◆</i><span>Projeto Dorcas</span><i>◆</i><span>Xadrez para Todos</span><i>◆</i>
+      <span>MeuMercadoOn</span><i>◆</i><span>Meu Salão</span><i>◆</i><span>AppFightClub</span><i>◆</i><span>ChessClub</span><i>◆</i><span>Projeto Dorcas</span><i>◆</i><span>Xadrez para Todos</span><i>◆</i>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section class="section" id="servicos">
+  <div class="wrap">
+    <header class="sechead">
+      <span class="eyebrow reveal">O QUE FAZEMOS</span>
+      <h2 class="reveal" data-d="1">Um time só, do primeiro rascunho ao produto rodando</h2>
+      <p class="reveal" data-d="2">Você não contrata “horas de programação”. Contrata um problema do negócio resolvido, com prazo, escopo e responsável.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card reveal" data-d="0">
+        <div class="card__ico">⌘</div>
+        <h3>Sistemas web sob medida</h3>
+        <p>Painéis de gestão, portais e plataformas multiempresa com login, permissões, relatórios e tudo o que a sua operação faz hoje na planilha.</p>
+        <ul class="ticks"><li>Multi-tenant e subdomínio próprio</li><li>Perfis de acesso e auditoria</li><li>Relatórios e exportação</li></ul>
+      </article>
+      <article class="card reveal" data-d="1">
+        <div class="card__ico">◈</div>
+        <h3>Aplicativos e PWA</h3>
+        <p>Aplicações que viram ícone no celular do cliente sem passar por loja — e, quando o caso pede, app publicado na App Store e no Google Play.</p>
+        <ul class="ticks"><li>Instalável e offline-first</li><li>Notificações e push</li><li>Performance em rede ruim</li></ul>
+      </article>
+      <article class="card reveal" data-d="2">
+        <div class="card__ico">▲</div>
+        <h3>Landing pages que vendem</h3>
+        <p>Páginas comerciais rápidas, com narrativa de vendas, captação de lead e medição — do jeito que a sua equipe consegue manter.</p>
+        <ul class="ticks"><li>Copy orientada a conversão</li><li>SEO técnico e Core Web Vitals</li><li>Integração com CRM/WhatsApp</li></ul>
+      </article>
+      <article class="card reveal" data-d="3">
+        <div class="card__ico">⇄</div>
+        <h3>Integrações e automações</h3>
+        <p>Pagamentos, notas, ERPs, WhatsApp, planilhas e APIs de terceiros conversando entre si — o trabalho manual sai da mão de alguém.</p>
+        <ul class="ticks"><li>Pagamentos e cobrança recorrente</li><li>Importação e migração de dados</li><li>Rotinas e alertas automáticos</li></ul>
+      </article>
+      <article class="card reveal" data-d="4">
+        <div class="card__ico">✦</div>
+        <h3>IA aplicada ao negócio</h3>
+        <p>Atendimento assistido, extração de dados de documentos e agentes que executam tarefas dentro do seu próprio sistema.</p>
+        <ul class="ticks"><li>Assistentes com a sua base</li><li>Leitura de documentos</li><li>Automação com revisão humana</li></ul>
+      </article>
+      <article class="card reveal" data-d="5">
+        <div class="card__ico">◎</div>
+        <h3>Sustentação e evolução</h3>
+        <p>Depois do lançamento o produto continua vivo: correções, novas funções, monitoramento e um canal direto com quem escreveu o código.</p>
+        <ul class="ticks"><li>SLA combinado por contrato</li><li>Roadmap revisado por mês</li><li>Backup e monitoramento</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MULTIPLATAFORMA ================= -->
+<section class="section" id="dispositivos">
+  <div class="wrap split split--devices">
+    <div class="split__left">
+      <span class="eyebrow reveal">APP, PWA E MULTIPLATAFORMA</span>
+      <h2 class="reveal" data-d="1">Um produto só. Cabe em cada dispositivo do seu cliente.</h2>
+      <p class="reveal" data-d="2">
+        A gente constrói uma vez e o mesmo sistema se ajusta ao celular do cliente, ao tablet do balcão
+        e ao computador do escritório. Nada de “versão mobile capenga”: cada tela é desenhada para o
+        tamanho em que vai ser usada — e, quando faz sentido, o sistema vira aplicativo instalável.
+      </p>
+
+      <ul class="devlist">
+        <li class="reveal" data-d="0"><h3>PWA — vira app sem passar por loja</h3><p>O cliente toca em “adicionar à tela de início” e o ícone fica no celular como qualquer app. Sem download de 80&nbsp;MB, sem aprovação da Apple ou do Google, e a atualização chega para todo mundo na hora.</p></li>
+        <li class="reveal" data-d="1"><h3>Funciona mesmo com internet ruim</h3><p>Cache offline, sincronização quando a conexão volta e telas leves — feito para o celular do entregador, do professor e do atendente, não só para o Wi-Fi do escritório.</p></li>
+        <li class="reveal" data-d="2"><h3>Notificação push e recursos do aparelho</h3><p>Aviso de pedido novo, lembrete de horário, leitura de código de barras pela câmera, GPS e compartilhamento nativo — o que o navegador do aparelho oferece, a gente usa.</p></li>
+        <li class="reveal" data-d="3"><h3>App nativo quando o caso pede</h3><p>Se o projeto precisa mesmo estar na App Store e no Google Play, publicamos o app nas lojas com a mesma base de código — sem manter dois produtos separados.</p></li>
+      </ul>
+
+      <div class="reveal" data-d="4"><a class="btn btn--mint btn--lg" href="#contato">Quero meu app <span class="arrow">→</span></a></div>
+    </div>
+
+    <div class="devices reveal" data-d="2" aria-label="O mesmo sistema em desktop, tablet e celular">
+      <div class="dev dev--laptop">
+        <div class="dev__screen"><img src="assets/portfolio/appfightclub.jpeg" alt="Sistema em tela de computador" loading="lazy" width="1440" height="900"></div>
+        <span class="dev__base"></span>
+      </div>
+      <div class="dev dev--phone dev--phone-a">
+        <span class="dev__notch"></span>
+        <div class="dev__screen"><img src="assets/portfolio/mobile-meusalaoon.jpeg" alt="O mesmo sistema no celular" loading="lazy" width="500" height="896"></div>
+      </div>
+      <div class="dev dev--phone dev--phone-b">
+        <span class="dev__notch"></span>
+        <div class="dev__screen"><img src="assets/portfolio/mobile-meumercadoon.jpeg" alt="Loja do mercado no celular do cliente" loading="lazy" width="500" height="896"></div>
+      </div>
+      <ul class="devtabs">
+        <li><span>320px</span> celular</li>
+        <li><span>768px</span> tablet</li>
+        <li><span>1440px+</span> desktop</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFÓLIO ================= -->
+<section class="section section--alt" id="portfolio">
+  <div class="wrap">
+    <header class="sechead">
+      <span class="eyebrow reveal">PORTFÓLIO</span>
+      <h2 class="reveal" data-d="1">Produtos que já estão no ar</h2>
+      <p class="reveal" data-d="2">Cada card abaixo é um sistema real, em produção, com clientes usando. Passe o mouse e clique para visitar.</p>
+    </header>
+
+    <div class="works">
+
+      <a class="work reveal" data-d="0" href="https://meumercadoon.com.br/" target="_blank" rel="noopener">
+        <div class="work__shot">
+          <div class="browser">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">meumercadoon.com.br</span>
+          </div>
+          <img src="assets/portfolio/meumercadoon.jpeg" alt="Página inicial do MeuMercadoOn" loading="lazy" width="1440" height="900">
+          <span class="work__glow"></span>
+          <span class="work__hover">Visitar site <b>↗</b></span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <h3>MeuMercadoOn</h3>
+            <span class="work__go" aria-hidden="true">↗</span>
+          </div>
+          <p>E-commerce completo para mercados, minimercados e hortifrútis: catálogo por peso ou unidade, estoque com baixa automática, pedidos, entrega e pagamento num painel só — cada mercado com o seu próprio endereço.</p>
+          <ul class="tags"><li>Multi-tenant</li><li>Estoque</li><li>Pagamentos</li><li>Delivery</li></ul>
+        </div>
+      </a>
+
+      <a class="work reveal" data-d="1" href="https://meusalaoon.com.br/" target="_blank" rel="noopener">
+        <div class="work__shot">
+          <div class="browser">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">meusalaoon.com.br</span>
+          </div>
+          <img src="assets/portfolio/meusalaoon.jpeg" alt="Página inicial do Meu Salão" loading="lazy" width="1440" height="900">
+          <span class="work__glow"></span>
+          <span class="work__hover">Visitar site <b>↗</b></span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <h3>Meu Salão</h3>
+            <span class="work__go" aria-hidden="true">↗</span>
+          </div>
+          <p>Agenda online aberta 24 horas para salões, barbearias e estúdios. O cliente escolhe serviço, profissional e horário pelo celular, e o agendamento cai na agenda de quem atende com o tempo exato do serviço.</p>
+          <ul class="tags"><li>Agendamento</li><li>Equipe</li><li>Link público</li><li>WhatsApp</li></ul>
+        </div>
+      </a>
+
+      <a class="work reveal" data-d="2" href="https://www.appfightclub.com.br/" target="_blank" rel="noopener">
+        <div class="work__shot">
+          <div class="browser">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">appfightclub.com.br</span>
+          </div>
+          <img src="assets/portfolio/appfightclub.jpeg" alt="Página inicial do AppFightClub" loading="lazy" width="1440" height="900">
+          <span class="work__glow"></span>
+          <span class="work__hover">Visitar site <b>↗</b></span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <h3>AppFightClub</h3>
+            <span class="work__go" aria-hidden="true">↗</span>
+          </div>
+          <p>Plataforma de gestão para academias de artes marciais: alunos e matrículas, funil de captação com aula experimental, agenda semanal, graduações e fechamento financeiro do mês — sem planilha paralela.</p>
+          <ul class="tags"><li>CRM</li><li>Financeiro</li><li>Graduações</li><li>Agenda</li></ul>
+        </div>
+      </a>
+
+      <a class="work reveal" data-d="3" href="https://appchessclub.com.br/login" target="_blank" rel="noopener">
+        <div class="work__shot">
+          <div class="browser">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">appchessclub.com.br</span>
+          </div>
+          <img src="assets/portfolio/appchessclub.jpeg" alt="Tela de login do ChessClub" loading="lazy" width="1440" height="900">
+          <span class="work__glow"></span>
+          <span class="work__hover">Visitar site <b>↗</b></span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <h3>ChessClub</h3>
+            <span class="work__go" aria-hidden="true">↗</span>
+          </div>
+          <p>Plataforma completa para clubes de xadrez: torneios em sistema suíço e eliminatória, chat em tempo real por canais, login social e integração com Chess.com e Lichess.</p>
+          <ul class="tags"><li>Tempo real</li><li>Torneios</li><li>OAuth</li><li>Integrações</li></ul>
+        </div>
+      </a>
+
+      <a class="work reveal" data-d="4" href="https://projeto-dorcas.github.io/" target="_blank" rel="noopener">
+        <div class="work__shot">
+          <div class="browser">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">projeto-dorcas.github.io</span>
+          </div>
+          <img src="assets/portfolio/projeto-dorcas.jpeg" alt="Site do Projeto Dorcas Renascer Lajeadinho" loading="lazy" width="1440" height="900">
+          <span class="work__glow"></span>
+          <span class="work__hover">Visitar site <b>↗</b></span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <h3>Projeto Dorcas Renascer</h3>
+            <span class="work__go" aria-hidden="true">↗</span>
+          </div>
+          <p>Site institucional de um projeto social de São Mateus do Sul (PR), feito para captar voluntários e apoiadores: história do projeto, atividades da semana, galeria e canais de doação.</p>
+          <ul class="tags"><li>Institucional</li><li>Captação</li><li>Terceiro setor</li><li>SEO</li></ul>
+        </div>
+      </a>
+
+      <a class="work reveal" data-d="5" href="https://adrianoramazzotte.github.io/xadrez-para-todos/" target="_blank" rel="noopener">
+        <div class="work__shot">
+          <div class="browser">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">xadrez-para-todos</span>
+          </div>
+          <img src="assets/portfolio/xadrez-para-todos.jpeg" alt="Landing page do projeto Xadrez para Todos" loading="lazy" width="1440" height="900">
+          <span class="work__glow"></span>
+          <span class="work__hover">Visitar site <b>↗</b></span>
+        </div>
+        <div class="work__body">
+          <div class="work__top">
+            <h3>Xadrez para Todos</h3>
+            <span class="work__go" aria-hidden="true">↗</span>
+          </div>
+          <p>Landing page de captação para patrocínio via Proesporte/ICMS no Paraná: explica o mecanismo do incentivo fiscal, mostra contrapartidas de marca e leva a empresa até o contato com a associação.</p>
+          <ul class="tags"><li>Landing page</li><li>Incentivo fiscal</li><li>Conversão</li><li>B2B</li></ul>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= MODELOS DE CONTRATAÇÃO ================= -->
+<section class="section" id="modelos">
+  <div class="wrap">
+    <header class="sechead">
+      <span class="eyebrow reveal">COMO CONTRATAR</span>
+      <h2 class="reveal" data-d="1">Do tamanho da necessidade — e do orçamento</h2>
+      <p class="reveal" data-d="2">Três formatos de contrato. Você começa pelo menor que resolve e sobe quando o retorno justificar.</p>
+    </header>
+
+    <div class="plans">
+      <article class="plan reveal" data-d="0">
+        <h3>Sprint pontual</h3>
+        <p class="plan__for">Para quem tem uma dor específica e prazo curto.</p>
+        <ul class="ticks">
+          <li>Landing page ou site institucional</li>
+          <li>Uma automação ou integração</li>
+          <li>Melhoria em sistema existente</li>
+          <li>Entrega em semanas, escopo fechado</li>
+        </ul>
+        <a class="btn btn--ghost btn--full" href="#contato">Orçar um sprint</a>
+      </article>
+
+      <article class="plan plan--hi reveal" data-d="1">
+        <span class="plan__badge">Mais contratado</span>
+        <h3>Produto sob medida</h3>
+        <p class="plan__for">Para tirar o sistema da planilha e colocar no ar.</p>
+        <ul class="ticks">
+          <li>Descoberta, escopo e protótipo antes de codar</li>
+          <li>Entregas quinzenais em ambiente de testes</li>
+          <li>Painel, permissões, relatórios e integrações</li>
+          <li>Publicação, treinamento e repasse do código</li>
+        </ul>
+        <a class="btn btn--mint btn--full" href="#contato">Falar sobre o meu produto <span class="arrow">→</span></a>
+      </article>
+
+      <article class="plan reveal" data-d="2">
+        <h3>Time contínuo</h3>
+        <p class="plan__for">Para produto que já roda e precisa evoluir sempre.</p>
+        <ul class="ticks">
+          <li>Squad dedicado por mês</li>
+          <li>Roadmap e prioridades revisados juntos</li>
+          <li>SLA de correção e monitoramento</li>
+          <li>Sem contrato de fidelidade longa</li>
+        </ul>
+        <a class="btn btn--ghost btn--full" href="#contato">Montar um time</a>
+      </article>
+    </div>
+
+    <p class="plans__note reveal">Todo orçamento sai com escopo escrito, prazo e valor fechado antes de qualquer linha de código.</p>
+  </div>
+</section>
+
+<!-- ================= PROCESSO ================= -->
+<section class="section section--alt" id="processo">
+  <div class="wrap">
+    <header class="sechead">
+      <span class="eyebrow reveal">PROCESSO</span>
+      <h2 class="reveal" data-d="1">Como um projeto anda na Code5</h2>
+      <p class="reveal" data-d="2">Sem caixa-preta: você acompanha o que está sendo feito, semana a semana.</p>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal" data-d="0"><span class="step__n">01</span><h3>Conversa de diagnóstico</h3><p>30 a 45 minutos para entender a operação, o que dói hoje e o que precisa existir. Sem compromisso.</p></li>
+      <li class="step reveal" data-d="1"><span class="step__n">02</span><h3>Escopo e proposta</h3><p>Você recebe o que será feito, em quais etapas, com prazo e valor fechado. Nada começa sem esse acordo.</p></li>
+      <li class="step reveal" data-d="2"><span class="step__n">03</span><h3>Protótipo navegável</h3><p>As telas antes do código: você aprova o fluxo enquanto mudar ainda é barato.</p></li>
+      <li class="step reveal" data-d="3"><span class="step__n">04</span><h3>Entregas por sprint</h3><p>A cada duas semanas tem versão nova em ambiente de teste, para você usar de verdade e ajustar.</p></li>
+      <li class="step reveal" data-d="4"><span class="step__n">05</span><h3>Publicação e treinamento</h3><p>Produto no ar, equipe treinada, documentação e o código no seu repositório.</p></li>
+      <li class="step reveal" data-d="5"><span class="step__n">06</span><h3>Evolução contínua</h3><p>Monitoramento, correções e novas funções — com o mesmo time que construiu.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= DIFERENCIAIS ================= -->
+<section class="section" id="porque">
+  <div class="wrap split">
+    <div class="split__left">
+      <span class="eyebrow reveal">POR QUE A CODE5</span>
+      <h2 class="reveal" data-d="1">Software de verdade, feito por quem atende o telefone</h2>
+      <p class="reveal" data-d="2">Somos uma casa de desenvolvimento enxuta: você fala com quem escreve o código, não com um intermediário. É isso que segura prazo e qualidade num projeto customizado.</p>
+      <div class="reveal" data-d="3"><a class="btn btn--mint btn--lg" href="#contato">Começar meu projeto <span class="arrow">→</span></a></div>
+    </div>
+    <ul class="whys">
+      <li class="reveal" data-d="0"><h3>Escopo do seu tamanho</h3><p>Nada de plataforma gigante para uma necessidade pequena — nem gambiarra para uma necessidade grande.</p></li>
+      <li class="reveal" data-d="1"><h3>Código é seu</h3><p>Repositório, dados e infraestrutura no seu nome. Você não fica refém de ninguém, nem da gente.</p></li>
+      <li class="reveal" data-d="2"><h3>Preço fechado por etapa</h3><p>Você sabe quanto custa antes de começar, e o que muda quando o escopo muda.</p></li>
+      <li class="reveal" data-d="3"><h3>Produtos próprios no ar</h3><p>Não vendemos só serviço: mantemos nossos próprios SaaS em produção, com clientes pagantes.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section section--alt" id="faq">
+  <div class="wrap wrap--narrow">
+    <header class="sechead">
+      <span class="eyebrow reveal">DÚVIDAS</span>
+      <h2 class="reveal" data-d="1">O que costumam perguntar antes de fechar</h2>
+    </header>
+
+    <div class="faq">
+      <details class="reveal" data-d="0"><summary>Quanto custa um sistema sob medida?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>Depende do escopo — e é por isso que orçamos por projeto, não por tabela. Na conversa de diagnóstico já conseguimos indicar a faixa de investimento e o caminho mais barato de começar; a proposta detalhada sai em poucos dias, com valor fechado por etapa.</p></div></details>
+      <details class="reveal" data-d="1"><summary>Em quanto tempo fica pronto?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>Uma landing page ou automação pontual costuma sair em semanas. Um produto completo é entregue por sprints, com a primeira versão utilizável bem antes do fim do projeto — você não espera meses para ver algo funcionando.</p></div></details>
+      <details class="reveal" data-d="2"><summary>Vocês trabalham com sistema que já existe?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>Sim. Assumimos manutenção e evolução de sistemas legados, fazemos migração de dados e integramos o que você já usa (ERP, financeiro, e-commerce, WhatsApp) em vez de jogar tudo fora.</p></div></details>
+      <details class="reveal" data-d="3"><summary>O código e os dados ficam comigo?</summary><div class="faq__a"><p>Sim. Repositório, banco de dados e contas de infraestrutura ficam no nome do cliente. Ao final da entrega você recebe acesso completo, com documentação.</p></div></details>
+      <details class="reveal" data-d="4"><summary>E depois que entra no ar, quem cuida?</summary><div class="faq__a"><p>Você escolhe: pode assumir com o time interno, ou contratar sustentação com a gente — com SLA de correção, monitoramento e uma fila de melhorias revisada todo mês.</p></div></details>
+      <details class="reveal" data-d="5"><summary>Atendem fora da minha cidade?</summary><div class="faq__a"><p>Atendemos todo o Brasil de forma remota, com reuniões gravadas e ambiente de testes aberto para o cliente acompanhar a qualquer hora.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="cta" id="contato">
+  <div class="cta__glow" aria-hidden="true"></div>
+  <div class="wrap cta__inner">
+    <div class="cta__copy">
+      <span class="eyebrow reveal">VAMOS COMEÇAR</span>
+      <h2 class="reveal" data-d="1">Conte o problema. A gente devolve o caminho.</h2>
+      <p class="reveal" data-d="2">Preencha ao lado ou chame direto no WhatsApp. Na primeira conversa você já sai com uma ideia clara de escopo, prazo e faixa de investimento — sem custo e sem compromisso.</p>
+      <ul class="cta__list reveal" data-d="3">
+        <li>Retorno em até 24h úteis</li>
+        <li>Diagnóstico gratuito de 30 minutos</li>
+        <li>Proposta com escopo e valor fechado</li>
+      </ul>
+      <div class="cta__contacts reveal" data-d="4">
+        <a href="mailto:contato@code5solutions.com.br">contato@code5solutions.com.br</a>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp comercial</a>
+      </div>
+    </div>
+
+    <form class="form reveal" data-d="2" id="form" action="mailto:contato@code5solutions.com.br" method="post" enctype="text/plain">
+      <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" required placeholder="Seu nome"></div>
+      <div class="field"><label for="empresa">Empresa</label><input id="empresa" name="empresa" placeholder="Nome da empresa"></div>
+      <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required placeholder="voce@empresa.com.br"></div>
+      <div class="field"><label for="whats">WhatsApp</label><input id="whats" name="whatsapp" placeholder="(00) 00000-0000"></div>
+      <div class="field field--full"><label for="tipo">O que você precisa</label>
+        <select id="tipo" name="tipo">
+          <option>Sistema web sob medida</option>
+          <option>Aplicativo / PWA</option>
+          <option>Landing page ou site</option>
+          <option>Integração ou automação</option>
+          <option>Evolução de sistema existente</option>
+          <option>Ainda não sei — quero conversar</option>
+        </select>
+      </div>
+      <div class="field field--full"><label for="msg">Conte rapidamente o cenário</label><textarea id="msg" name="mensagem" rows="4" placeholder="Hoje a gente controla isso numa planilha e..."></textarea></div>
+      <button class="btn btn--mint btn--full btn--lg" type="submit">Enviar e agendar diagnóstico <span class="arrow">→</span></button>
+      <p class="form__legal">Ao enviar, você concorda em ser contatado pela Code5 Solutions sobre este pedido.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <div class="foot__brand">
+      <span class="brand__text">code<span class="brand__five">5</span><em>solutions</em></span>
+      <p>Desenvolvimento de software sob medida — sistemas, aplicativos, integrações e automações para empresas de qualquer porte.</p>
+    </div>
+    <div class="foot__col"><h4>Serviços</h4><a href="#servicos">Sistemas web</a><a href="#dispositivos">Aplicativos e PWA</a><a href="#servicos">Landing pages</a><a href="#servicos">Integrações</a></div>
+    <div class="foot__col"><h4>Empresa</h4><a href="#portfolio">Portfólio</a><a href="#processo">Processo</a><a href="#modelos">Como contratar</a><a href="#faq">Dúvidas</a></div>
+    <div class="foot__col"><h4>Contato</h4><a href="mailto:contato@code5solutions.com.br">contato@code5solutions.com.br</a><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a></div>
+  </div>
+  <div class="wrap foot__bar"><span>© <span id="year">2026</span> Code5 Solutions. Todos os direitos reservados.</span><span>Feito sob medida, como tudo que entregamos.</span></div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
