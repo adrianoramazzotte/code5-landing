@@ -1,0 +1,23 @@
+name: Validar
+
+# Roda em toda alteração: na dev, nos pull requests e também na main antes
+# do deploy. É o portão que impede uma página quebrada de chegar na VPS.
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [main]
+  workflow_call:
+
+jobs:
+  validar:
+    name: Conferir a página
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validar estrutura, assets e contatos
+        run: python3 scripts/validar.py
+
+      - name: Conferir sintaxe do JavaScript
+        run: node --check assets/js/main.js

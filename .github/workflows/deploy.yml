@@ -1,0 +1,55 @@
+name: Publicar em produção
+
+# Só a main publica. A dev nunca toca na VPS — ela passa pelo Validar e para
+# por aí. Para ir ao ar: pull request da dev para a main, merge, e este
+# workflow envia os arquivos.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:        # permite publicar na mão pela aba Actions
+
+concurrency:
+  group: producao           # dois deploys nunca correm juntos
+  cancel-in-progress: false
+
+jobs:
+  validar:
+    uses: ./.github/workflows/validar.yml
+
+  publicar:
+    name: Enviar para a VPS
+    needs: validar
+    runs-on: ubuntu-latest
+    environment:
+      name: producao
+      url: https://code5solutions.com.br
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar a chave de deploy
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          printf '%s\n' "${{ secrets.VPS_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Enviar arquivos
+        run: |
+          rsync -az --delete \
+            --exclude '.git*' --exclude 'deploy' --exclude 'scripts' \
+            --exclude 'README.md' --exclude 'DEPLOY.md' \
+            -e "ssh -i ~/.ssh/deploy -o IdentitiesOnly=yes" \
+            ./ "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/"
+
+      - name: Conferir o site no ar
+        run: |
+          codigo=$(curl -s -o /tmp/pagina.html -w '%{http_code}' https://code5solutions.com.br/)
+          echo "HTTP $codigo"
+          test "$codigo" = "200"
+          grep -q "Code5 Solutions" /tmp/pagina.html
+          for asset in assets/css/styles.css assets/js/main.js; do
+            c=$(curl -s -o /dev/null -w '%{http_code}' "https://code5solutions.com.br/$asset")
+            echo "$asset -> $c"; test "$c" = "200"
+          done
+          echo "Publicado: https://code5solutions.com.br"
