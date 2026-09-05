@@ -27,12 +27,16 @@ python3 -m http.server 8777
 É site estático: serve em GitHub Pages, Netlify, Vercel, Cloudflare Pages ou qualquer hospedagem.
 No GitHub Pages basta subir a pasta na branch `main` e apontar Pages para a raiz.
 
-## O que trocar antes de ir ao ar
+## Contato configurado
+
+E-mail `adriano.ramazzotte@gmail.com` e WhatsApp `(43) 99983-7140`
+(`wa.me/5543999837140`, com mensagem já preenchida) no hero, na seção de contato,
+no formulário e no rodapé.
+
+## O que ainda dá para ajustar
 
 | Onde | O quê |
 |---|---|
-| `index.html` (hero, contato, rodapé) | `contato@code5solutions.com.br` pelo e-mail real |
-| `index.html` (`wa.me/5500000000000`) | número real do WhatsApp comercial, formato `55DDDNÚMERO` |
 | `index.html` (bloco `.stats`) | métricas do hero (`6 produtos`, `5 setores`, `24h`) se quiser outros números |
 | `assets/js/main.js` (handler do `#form`) | hoje o formulário abre o cliente de e-mail; troque por Formspree/API própria |
 | `index.html` (`og:` meta tags) | adicionar uma imagem `og:image` quando houver arte social |
