@@ -29,7 +29,7 @@ No GitHub Pages basta subir a pasta na branch `main` e apontar Pages para a raiz
 
 ## Contato configurado
 
-E-mail `adriano.ramazzotte@gmail.com` e WhatsApp `(43) 99983-7140`
+E-mail `contato@code5solutions.com.br` e WhatsApp `(43) 99983-7140`
 (`wa.me/5543999837140`, com mensagem já preenchida) no hero, na seção de contato,
 no formulário e no rodapé.
 
