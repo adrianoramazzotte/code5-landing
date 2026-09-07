@@ -323,7 +323,7 @@ ul,ol{margin:0;padding:0;list-style:none}
     background:rgba(7,11,9,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
     max-height:0;overflow:hidden;transition:max-height .45s var(--ease);
   }
-  .nav.open .nav__links{max-height:340px}
+  .nav.open .nav__links{max-height:420px}
   .nav__links a{padding:15px 24px;border-top:1px solid var(--line)}
   .hero{padding-top:96px}
   .hero__title{max-width:none}
@@ -402,4 +402,64 @@ ul,ol{margin:0;padding:0;list-style:none}
 }
 @media (prefers-reduced-motion:reduce){
   .dev{animation:none !important}
+}
+
+
+/* ---------------- Sua ideia (parceria x chave na mão) ---------------- */
+.idea{position:relative;isolation:isolate;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.idea__glow{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(46% 52% at 12% 8%,rgba(47,230,160,.16),transparent 68%),
+    radial-gradient(40% 46% at 88% 92%,rgba(31,90,64,.30),transparent 70%),
+    linear-gradient(180deg,rgba(255,255,255,.025),transparent 40%,rgba(255,255,255,.025));
+}
+.sechead--wide{max-width:830px}
+
+/* trilho de análise antes da escolha */
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:26px}
+.flow li{
+  position:relative;padding:22px 24px 22px 26px;border-radius:var(--radius);
+  border:1px solid var(--line);background:rgba(10,16,13,.6);backdrop-filter:blur(6px);
+  transition:transform .4s var(--ease),border-color .35s;
+}
+.flow li::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:2px;border-radius:0 2px 2px 0;background:linear-gradient(180deg,var(--mint),rgba(47,230,160,0))}
+.flow li:hover{transform:translateY(-4px);border-color:rgba(47,230,160,.32)}
+.flow b{display:block;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.16em;color:var(--mint);margin-bottom:.55rem}
+.flow h3{font-size:1.05rem;margin-bottom:.4rem}
+.flow p{color:var(--muted);font-size:.9rem}
+
+/* os dois caminhos */
+.paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+.path{
+  position:relative;display:flex;flex-direction:column;padding:34px 32px;
+  border-radius:var(--radius-lg);border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(10,16,13,.86),rgba(10,16,13,.58));backdrop-filter:blur(8px);
+  transition:transform .45s var(--ease),border-color .35s;
+}
+.path:hover{transform:translateY(-6px);border-color:var(--line-2)}
+.path--hi{border-color:rgba(47,230,160,.4);background:linear-gradient(180deg,rgba(47,230,160,.11),rgba(10,16,13,.7))}
+.path--hi:hover{border-color:rgba(47,230,160,.62)}
+.path__tag{display:flex;align-items:center;gap:.7rem;font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mint)}
+.path__tag::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,rgba(47,230,160,.45),transparent)}
+.path h3{font-size:clamp(1.3rem,2.2vw,1.55rem);margin:.95rem 0 .5rem}
+.path__for{color:var(--muted);font-size:.95rem}
+.path .ticks{margin-top:1.3rem}
+.path__foot{margin-top:auto;padding-top:1.7rem}
+
+/* quem entra com o quê */
+.deal{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1.4rem;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.deal--solo{grid-template-columns:minmax(0,1fr)}
+.deal > div{background:rgba(6,10,8,.72);padding:18px 20px}
+.deal h4{font-size:.71rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mint);margin-bottom:.7rem;font-weight:600}
+.deal ul{display:grid;gap:.42rem}
+.deal li{color:#AEBDB5;font-size:.86rem;line-height:1.42}
+
+@media (max-width:1024px){
+  .flow{grid-template-columns:minmax(0,1fr)}
+  .paths{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .path{padding:28px 22px}
+  .deal{grid-template-columns:minmax(0,1fr)}
 }
