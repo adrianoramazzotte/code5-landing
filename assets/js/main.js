@@ -84,7 +84,7 @@
     ].join('\n');
     const assunto = `Novo pedido de orçamento — ${d.get('empresa') || d.get('nome') || 'site'}`;
     window.location.href =
-      `mailto:adriano.ramazzotte@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(linhas)}`;
+      `mailto:contato@code5solutions.com.br?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(linhas)}`;
   });
 
   /* ---------- Ano no rodapé ---------- */

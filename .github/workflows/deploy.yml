@@ -1,55 +1,58 @@
 name: Publicar em produção
 
-# Só a main publica. A dev nunca toca na VPS — ela passa pelo Validar e para
-# por aí. Para ir ao ar: pull request da dev para a main, merge, e este
-# workflow envia os arquivos.
+# Só a main publica. A dev passa pelo Validar e para por aí.
+#
+# COMO A PUBLICAÇÃO ACONTECE: quem envia os arquivos é a própria VPS, não o
+# runner do GitHub. Um timer systemd (deploy-code5-poll.timer) verifica a cada
+# 3 minutos se a main tem commit novo e, se tiver, atualiza o site. É o mesmo
+# padrão já usado pelo appmercado e pelo appsalaodebeleza nesta VPS, porque o
+# firewall de borda da Hostinger não deixa o runner do GitHub chegar na porta
+# 22. Este workflow, portanto, valida e depois ESPERA o commit aparecer no ar
+# — se não aparecer, ele falha e você fica sabendo.
 on:
   push:
     branches: [main]
-  workflow_dispatch:        # permite publicar na mão pela aba Actions
+  workflow_dispatch:
 
 concurrency:
-  group: producao           # dois deploys nunca correm juntos
+  group: producao
   cancel-in-progress: false
 
 jobs:
   validar:
     uses: ./.github/workflows/validar.yml
 
-  publicar:
-    name: Enviar para a VPS
+  confirmar:
+    name: Confirmar publicação
     needs: validar
     runs-on: ubuntu-latest
     environment:
       name: producao
       url: https://code5solutions.com.br
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Preparar a chave de deploy
+      - name: Esperar a VPS publicar este commit
         run: |
-          mkdir -p ~/.ssh
-          printf '%s\n' "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy
-          chmod 600 ~/.ssh/deploy
-          printf '%s\n' "${{ secrets.VPS_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
+          esperado="${GITHUB_SHA}"
+          echo "Aguardando https://code5solutions.com.br/version.txt virar $esperado"
+          for tentativa in $(seq 1 40); do   # 40 x 15s = 10 minutos
+            atual=$(curl -fsS --max-time 10 https://code5solutions.com.br/version.txt 2>/dev/null | tr -d '[:space:]' || echo "")
+            if [ "$atual" = "$esperado" ]; then
+              echo "Publicado na tentativa $tentativa."
+              exit 0
+            fi
+            echo "  [$tentativa/40] no ar: ${atual:-<sem version.txt>}"
+            sleep 15
+          done
+          echo "::error::O commit não chegou ao ar em 10 minutos. Verifique na VPS: systemctl status deploy-code5-poll.service"
+          exit 1
 
-      - name: Enviar arquivos
-        run: |
-          rsync -az --delete \
-            --exclude '.git*' --exclude 'deploy' --exclude 'scripts' \
-            --exclude 'README.md' --exclude 'DEPLOY.md' \
-            -e "ssh -i ~/.ssh/deploy -o IdentitiesOnly=yes" \
-            ./ "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/"
-
-      - name: Conferir o site no ar
+      - name: Teste de fumaça
         run: |
           codigo=$(curl -s -o /tmp/pagina.html -w '%{http_code}' https://code5solutions.com.br/)
-          echo "HTTP $codigo"
-          test "$codigo" = "200"
+          echo "página: HTTP $codigo"; test "$codigo" = "200"
           grep -q "Code5 Solutions" /tmp/pagina.html
-          for asset in assets/css/styles.css assets/js/main.js; do
+          for asset in assets/css/styles.css assets/js/main.js assets/portfolio/meumercadoon.jpeg; do
             c=$(curl -s -o /dev/null -w '%{http_code}' "https://code5solutions.com.br/$asset")
             echo "$asset -> $c"; test "$c" = "200"
           done
-          echo "Publicado: https://code5solutions.com.br"
+          echo "No ar: https://code5solutions.com.br"

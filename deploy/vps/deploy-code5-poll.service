@@ -1,0 +1,9 @@
+[Unit]
+Description=Verifica e publica deploy pendente da landing da Code5 (main)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=code5
+ExecStart=/usr/local/bin/deploy-code5-poll.sh

@@ -1,0 +1,13 @@
+[Unit]
+Description=Dispara a checagem de deploy pendente da landing da Code5 a cada 3 min
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=3min
+# Desencontra dos timers do appmercado e do appsalao, que rodam no mesmo
+# intervalo nesta VPS.
+RandomizedDelaySec=45
+Persistent=true
+
+[Install]
+WantedBy=timers.target

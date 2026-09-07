@@ -8,7 +8,7 @@ acento menta, tipografia display bem apertada e movimento discreto.
 
 ```
 index.html                  página inteira (nav, hero, serviços, multiplataforma, portfólio,
-                            planos, processo, FAQ, contato, rodapé)
+                            sua ideia, planos, processo, FAQ, contato, rodapé)
 assets/css/styles.css       design system + responsivo + prefers-reduced-motion
 assets/js/main.js           canvas dos estilhaços, reveal on scroll, contadores, menu, FAQ, formulário
 assets/portfolio/*.jpeg     capturas reais dos 6 projetos (1440x900) + versões mobile usadas
@@ -29,7 +29,7 @@ No GitHub Pages basta subir a pasta na branch `main` e apontar Pages para a raiz
 
 ## Contato configurado
 
-E-mail `adriano.ramazzotte@gmail.com` e WhatsApp `(43) 99983-7140`
+E-mail `contato@code5solutions.com.br` e WhatsApp `(43) 99983-7140`
 (`wa.me/5543999837140`, com mensagem já preenchida) no hero, na seção de contato,
 no formulário e no rodapé.
 
@@ -64,3 +64,17 @@ das imagens em `index.html`.
 
 Ao editar o CSS, force o recarregamento com **Ctrl+Shift+R** — o navegador costuma manter
 `styles.css` em cache e mostrar o layout antigo.
+
+## Seção "Sua ideia" (#ideia)
+
+Chamada para quem chega com uma ideia em vez de um escopo pronto. Estrutura:
+
+1. `.flow` — as três etapas anteriores à decisão (conversa com NDA, análise de viabilidade, escolha conjunta).
+2. `.paths` — os dois modelos de negócio, lado a lado:
+   - **Caminho 01 — Parceria** (`.path--hi`): a Code5 desenvolve e entra como sócia. O bloco `.deal`
+     mostra o que cada lado aporta. CTA vai direto para o WhatsApp com mensagem preenchida.
+   - **Caminho 02 — Chave na mão**: entrega fechada, 100% do negócio do cliente. CTA leva ao formulário.
+
+O percentual de participação e os prazos são propositalmente não numéricos no site — saem da análise
+caso a caso. Se um dia houver faixa pública (ex.: "de 20% a 40%"), o lugar é a lista `.ticks` do Caminho 01.
+O select do formulário (`#tipo`) e o FAQ já têm as opções/respostas de parceria correspondentes.
