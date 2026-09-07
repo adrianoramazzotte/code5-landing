@@ -70,6 +70,23 @@ for marcacao in ("TODO", "FIXME", "XXX"):
     if re.search(rf"\b{marcacao}\b", html):
         erro(f"O HTML ainda tem uma marcação de pendência ({marcacao}).")
 
+# 4b. O contato oficial é o único que pode aparecer — nada de e-mail pessoal no ar
+CONTATO = "contato@code5solutions.com.br"
+PLACEHOLDERS = {"voce@empresa.com.br"}  # texto de exemplo do campo do formulário
+PADRAO_EMAIL = r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
+
+no_html = set(re.findall(PADRAO_EMAIL, html)) - PLACEHOLDERS
+if CONTATO not in no_html:
+    erro(f"O HTML não mostra o contato oficial ({CONTATO}).")
+for outro in sorted(no_html - {CONTATO}):
+    erro(f"E-mail que não é o contato oficial aparece no HTML: {outro}")
+
+js = RAIZ / "assets" / "js" / "main.js"
+if js.exists():
+    for destino in sorted(set(re.findall(rf"mailto:({PADRAO_EMAIL})", js.read_text(encoding="utf-8")))):
+        if destino != CONTATO:
+            erro(f"O main.js envia para um e-mail que não é o contato oficial: {destino}")
+
 # 5. Os links do portfólio precisam abrir em aba nova, sem vazar referrer
 for m in re.finditer(r'<a class="work[^"]*"[^>]*>', html):
     tag = m.group(0)

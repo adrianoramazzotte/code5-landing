@@ -32,7 +32,7 @@ cert() {
     echo "   (cuidado com o IP de parking da Hostinger — ver vps/README.md do xadrez)"
     exit 1
   fi
-  ssh "$HOST" "certbot certonly --webroot -w '${RAIZ}' -d '${DOMINIO}' -d 'www.${DOMINIO}' --non-interactive --agree-tos -m adriano.ramazzotte@gmail.com"
+  ssh "$HOST" "certbot certonly --webroot -w '${RAIZ}' -d '${DOMINIO}' -d 'www.${DOMINIO}' --non-interactive --agree-tos -m contato@code5solutions.com.br"
   echo "==> instalando o bloco definitivo (HTTPS)"
   scp "${AQUI}/deploy/nginx/${DOMINIO}.conf" "${HOST}:/etc/nginx/sites-available/${DOMINIO}.conf"
   ssh "$HOST" "nginx -t && systemctl reload nginx"
