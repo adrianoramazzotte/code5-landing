@@ -77,6 +77,22 @@ o próximo commit sobrescreve o que foi enviado assim.
 | Server block | `/etc/nginx/sites-available/code5solutions.com.br.conf` |
 | Certificado | Let's Encrypt, webroot, apex + `www` (não é wildcard) |
 
+## Painel de prospecção e demos (`/painel/` e `/demo/`)
+
+Dois caminhos do domínio **não** são da landing; vêm do repositório
+`busca-sites` e entram pelo `include /etc/nginx/snippets/code5-prospeccao.conf`
+do server block:
+
+| Caminho | Destino |
+|---|---|
+| `/painel/` | app Node `busca-sites.service` em `127.0.0.1:3500` (com senha) |
+| `/demo/<empresa>/` | `/var/www/code5-demos`: sites de demonstração publicados pelo painel |
+
+As demos ficam fora de `/var/www/code5solutions.com.br` de propósito: o
+`rsync --delete` do deploy da landing apagaria tudo. Ao mexer neste server
+block, mantenha a linha do `include`; o snippet e o serviço são instalados por
+`./deploy/deploy.sh --instalar` no repositório `busca-sites`.
+
 ## DNS (já configurado)
 
 Na zona do domínio (Hostinger), apontando para a VPS — cuidado ao mexer: os
